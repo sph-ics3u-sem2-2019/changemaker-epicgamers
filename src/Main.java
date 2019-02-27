@@ -12,10 +12,6 @@ public class Main {
 		 * If it does not end in a 5 or 0, you must round the number appropriately.
 		 * If the payment doesn't cover the cost, output the amount still owing.
 		 */
-		
-		
-		
-		
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
 		double cost=in.nextDouble();
