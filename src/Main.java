@@ -21,10 +21,10 @@ public class Main {
 		double change = payment-cost;
 		
 		if (change<0) {
-		System.out.println("You still owe $"+change+".");
+		System.out.println("You still owe $"+-change+".");
 		} else {
 			
-		System.out.println("Your change is $"+change+".");}
+		System.out.println("Your change is $"+change+".");
 		
 		int hundreds= (int)(change/100);
 		if (hundreds != 0) {
@@ -82,6 +82,6 @@ public class Main {
 		
 		if (nickels != 0) {
 		System.out.println(nickels+ " nickels");}
-		
+		}
 	}
 }
