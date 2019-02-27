@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		/*
 		 * Create a program that reads in a dollar amount for the cost of an item
 		 * Read in a second amount for how much was paid
@@ -14,7 +13,6 @@ public class Main {
 		 * If the payment doesn't cover the cost, output the amount still owing.
 		 * Also reminder that as many edge cases as possible should be patched.
 		 */ 
-
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
 		double cost=in.nextDouble();
@@ -86,21 +84,20 @@ public class Main {
 			double eighth = (seventh-0.25*quarters);
 
 			int dimes= (int)(eighth*10);
+			if (dimes != 0) {
+			System.out.println(dimes+ " dimes");}
 			double ninth= (eighth-0.1*dimes);
 
 			int nickels=0;
-			if (ninth<0.025){
-				nickels=0;
-			} else if (ninth>=0.025&&ninth<0.075) { 
-				nickels=1;
-			} else if (ninth>=0.075&&ninth<0.1) {
-				dimes = dimes+1;}
-
-			if (dimes != 0) {
-				System.out.println(dimes+ " dimes");}
-
 			if (nickels != 0) {
-				System.out.println(nickels+ " nickels");}
+			System.out.println(nickels+ " nickels");}
+			
+			/*if (ninth<0.025){
+			nickels=0;
+		    } else if (ninth>=0.025&&ninth<0.075) { 
+			nickels=1;
+			} else if (ninth>=0.075&&ninth<0.1) {
+			dimes = dimes+1;}*/
 		}
 	}
 }
