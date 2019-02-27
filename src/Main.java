@@ -17,6 +17,55 @@ public class Main {
 		double cost=in.nextDouble();
 		System.out.println("How much was paid?");
 		double payment=in.nextDouble();
+		double change = payment-cost;
+		System.out.println("Your change is $"+change+".");
+		
+		int hundreds= (int)(change/100);
+		System.out.println(hundreds+" $100 bills");
+		double frist = (change-100*hundreds);
+		
+		int fifties= (int)(frist/50);
+		System.out.println(fifties+" $50 bills");
+		double second = (frist-50*fifties);
+		
+		int twenties= (int)(second/20);
+		System.out.println(twenties+" $20 bills");
+		double third = (second-20*twenties);
+		
+	    int tens= (int)(third/10);
+		System.out.println(tens+" $10 bills");
+		double fourth = (third-10*tens);
+		
+		int fivers= (int)(fourth/5);
+		System.out.println(fivers+" $5 bills");
+		double fifth = (fourth-5*fivers);
+		
+		int toonies= (int)(fifth/2);
+		System.out.println(toonies+" toonies");
+		double sixth = (fifth-2*toonies);
+		
+		int loonies= (int)(sixth);
+		System.out.println(loonies+" loonies");
+		double seventh = (sixth-loonies);
+		
+		int quarters= (int)(seventh*4);
+		System.out.println(quarters+" quarters");
+		double eighth = (seventh-0.25*quarters);
+		
+		int dimes= (int)(eighth*10);
+		double ninth= (eighth-0.1*dimes);
+		//System.out.println(eighth);
+		
+		int nickels=0;
+		if (ninth<0.025) {
+			nickels=0;
+		} else if (ninth>=0.025&&ninth<0.075) { 
+			nickels=1;
+		} else if (ninth>=0.075&&ninth<0.1) {
+		    dimes = dimes+1;}
+		
+		System.out.println(dimes+ " dimes");
+		System.out.println(nickels+ " nickels");
 		//TODO: Here is where your code goes
 	}
 
