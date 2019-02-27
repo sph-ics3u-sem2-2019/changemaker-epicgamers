@@ -12,6 +12,7 @@ public class Main {
 		 * How many 100s,50s,20s,10s,5s,toonies,loonies,quarters,dimes,nickels.
 		 * If it does not end in a 5 or 0, you must round the number appropriately.
 		 * If the payment doesn't cover the cost, output the amount still owing.
+		 * Also reminder that as many edge cases as possible should be patched.
 		 */ 
 
 		Scanner in=new Scanner(System.in);
@@ -38,7 +39,7 @@ public class Main {
 		}while (payment<0);*/
 		
 		double change = payment-cost;
-		if (change<0) {
+		if (change<0) {   // You're right, we need to round the change at the beginning
 			System.out.println("You still owe $"+-change+".");
 		} else {
 
