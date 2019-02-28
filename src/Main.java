@@ -16,6 +16,9 @@ public class Main {
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
 		double cost=in.nextDouble();
+		
+		
+		
 		/*do {
 			try {
 				cost=in.nextDouble();
@@ -36,7 +39,10 @@ public class Main {
 			}
 		}while (payment<0);*/
 		
-		double change = payment-cost;
+		double change3 = payment-cost;
+		double change2 = Math.round((change3)*20);
+				double change = ((change2)/20);
+				
 		if (change<0) {   // You're right, we need to round the change at the beginning
 			System.out.println("You still owe $"+-change+".");
 		} else {
