@@ -12,19 +12,23 @@ public class Main{
 		 * if the payment doesn't cover the cost, output the amount still owing.
 		 * Also reminder that as many edge cases as possible should be patched.
 		 * 
-		 * 
-		 * 123
-		 * 
 		 * double change2=Math.round((change3)*20);
 				double change=((change2)/20);
 		 */
+		
+		//Recieve input
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
+		
+		
+		//Round 1 Start
 		double cost3=in.nextDouble();
 		double cost2=Math.round((cost3)*20);
 		double cost=((cost2)/20);
+		//Round 1 End
+		
 		if(cost<=0){
-			System.out.println("Nope.");
+			System.out.println("No sir you cannot do that.");
 		}else{
 			/*do{
 			try{
@@ -35,13 +39,14 @@ public class Main{
 		    }
 		}while (cost<0);*/
 			
+			//Read input
 			System.out.println("How much was paid?");
 			double payment=in.nextDouble();
 
 			if(payment<0){
 				System.out.println("Do not rob the cashier. Try again.");
 			}else if((payment*100)%5!=0){ //broken
-				System.out.println("Stop using pennies, try again.");
+				System.out.println("Stop using pennies and get out of oue store.");
 			}else{
 				/*do{
 			try{
@@ -52,8 +57,10 @@ public class Main{
 			}
 		}while (payment<0);*/
 				in.close();
+				//Round 2 Start (change)
 				double change2=Math.round((payment-cost)*20);
 				double change=change2/20;
+				//Round 2 end (Change)
 
 				if(change<0){
 					System.out.println("You still owe $"+-change+".");
