@@ -41,7 +41,7 @@ public class Main{
 				System.out.println("Try again");
 			}
 		}while (payment<0);*/
-
+				in.close();
 				double change3=payment-cost;
 				double change2=Math.round((change3)*20);
 				double change=((change2)/20);
