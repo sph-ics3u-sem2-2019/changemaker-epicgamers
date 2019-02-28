@@ -8,15 +8,23 @@ public class Main{
 		 * Read in a second amount for how much was paid
 		 * Print out how to break it into change
 		 * How many 100s,50s,20s,10s,5s,toonies,loonies,quarters,dimes,nickels.
-		 * ifit does not end in a 5 or 0, you must round the number appropriately.
-		 * ifthe payment doesn't cover the cost, output the amount still owing.
+		 * if it does not end in a 5 or 0, you must round the number appropriately.
+		 * if the payment doesn't cover the cost, output the amount still owing.
 		 * Also reminder that as many edge cases as possible should be patched.
+		 * 
+		 * 
+		 * 123
+		 * 
+		 * double change2=Math.round((change3)*20);
+				double change=((change2)/20);
 		 */
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
-		double cost=in.nextDouble();
-		if(cost<0){
-			System.out.println("Wait, what?");
+		double cost3=in.nextDouble();
+		double cost2=Math.round((cost3)*20);
+		double cost=((cost2)/20);
+		if(cost<=0){
+			System.out.println("Nope.");
 		}else{
 			/*do{
 			try{
@@ -26,12 +34,14 @@ public class Main{
 			  System.out.println("Try again.");
 		    }
 		}while (cost<0);*/
-
+			
 			System.out.println("How much was paid?");
 			double payment=in.nextDouble();
 
 			if(payment<0){
 				System.out.println("Do not rob the cashier. Try again.");
+			}else if((payment*100)%5!=0){ //broken
+				System.out.println("Stop using pennies, try again.");
 			}else{
 				/*do{
 			try{
@@ -42,9 +52,8 @@ public class Main{
 			}
 		}while (payment<0);*/
 				in.close();
-				double change3=payment-cost;
-				double change2=Math.round((change3)*20);
-				double change=((change2)/20);
+				double change2=Math.round((payment-cost)*20);
+				double change=change2/20;
 
 				if(change<0){
 					System.out.println("You still owe $"+-change+".");
@@ -55,52 +64,70 @@ public class Main{
 
 					int hundreds=(int)(change/100);
 					if(hundreds!=0){
-						System.out.println(hundreds+" $100 bills");}
+						char s;
+						if (hundreds==1) {s=' ';}else{s='s';}
+						System.out.println(hundreds+" $100 bill"+s);}
 					double frist=(change-100*hundreds);
 
 					int fifties=(int)(frist/50);
 					if(fifties!=0){
-						System.out.println(fifties+" $50 bills");}
+						char s;
+						if (fifties==1) {s=' ';}else{s='s';}
+						System.out.println(fifties+" $50 bill"+s);}
 					double second=(frist-50*fifties);
 
 					int twenties=(int)(second/20);
 					if(twenties!=0){
-						System.out.println(twenties+" $20 bills");}
+						char s;
+						if (twenties==1) {s=' ';}else{s='s';}
+						System.out.println(twenties+" $20 bill"+s);}
 					double third=(second-20*twenties);
 
 					int tens=(int)(third/10);
 					if(tens!=0){
-						System.out.println(tens+" $10 bills");}
+						char s;
+						if (tens==1) {s=' ';}else{s='s';}
+						System.out.println(tens+" $10 bill"+s);}
 					double fourth=(third-10*tens);
 
 					int fivers=(int)(fourth/5);
 					if(fivers!=0){
-						System.out.println(fivers+" $5 bills");}
+						char s;
+						if (fivers==1) {s=' ';}else{s='s';}
+						System.out.println(fivers+" $5 bill"+s);}
 					double fifth=(fourth-5*fivers);
 
 					int toonies=(int)(fifth/2);
 					if(toonies!=0){
-						System.out.println(toonies+" toonies");}
+						char s;
+						if (toonies==1) {s=' ';}else{s='s';}
+						System.out.println(toonies+" toonie"+s);}
 					double sixth=(fifth-2*toonies);
 
 					int loonies=(int)(sixth);
 					if(loonies!=0){
-						System.out.println(loonies+" loonies");}
+						char s;
+						if (loonies==1) {s=' ';}else{s='s';}
+						System.out.println(loonies+" loonie"+s);}
 					double seventh=(sixth-loonies);
 
 					int quarters=(int)(seventh*4);
 					if(quarters!=0){
-						System.out.println(quarters+" quarters");}
+						char s;
+						if (quarters==1) {s=' ';}else{s='s';}
+						System.out.println(quarters+" quarter"+s);}
 					double eighth=(seventh-0.25*quarters);
 
 					int dimes=(int)(eighth*10);
 					if(dimes!=0){
-						System.out.println(dimes+ " dimes");}
+						char s;
+						if (dimes==1) {s=' ';}else{s='s';}
+						System.out.println(dimes+ " dime"+s);}
 					double ninth=(eighth-0.1*dimes);
 
 					int nickels=(int)Math.round(ninth*20);
 					if(nickels!=0){
-						System.out.println(nickels+ " nickels");}
+						System.out.println(nickels+ " nickel");}
 
 					/*if(ninth<0.025){
 						nickels=0;
