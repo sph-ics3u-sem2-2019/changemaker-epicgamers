@@ -16,9 +16,9 @@ public class Main {
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
 		double cost=in.nextDouble();
-		
-		
-		
+		if (cost<0) {
+			System.out.println("Wait, what?");
+		} else {
 		/*do {
 			try {
 				cost=in.nextDouble();
@@ -30,6 +30,10 @@ public class Main {
 		
 		System.out.println("How much was paid?");
 		double payment=in.nextDouble();
+		
+		if (payment<0) {
+			System.out.println("Do not rob the cashier. Try again.");
+		} else {
 		/*do {
 			try {
 				payment=in.nextDouble();
@@ -41,12 +45,13 @@ public class Main {
 		
 		double change3 = payment-cost;
 		double change2 = Math.round((change3)*20);
-				double change = ((change2)/20);
+		double change = ((change2)/20);	
 				
-		if (change<0) {   // You're right, we need to round the change at the beginning
-			System.out.println("You still owe $"+-change+".");
+		if (change<0) { 
+		    System.out.println("You still owe $"+-change+".");
+		} else if (change==0){
+			System.out.println("You have paid in full.");
 		} else {
-
 			System.out.println("Your change is $"+change+".");
 
 			int hundreds= (int)(change/100);
@@ -94,7 +99,7 @@ public class Main {
 			System.out.println(dimes+ " dimes");}
 			double ninth= (eighth-0.1*dimes);
 
-			int nickels=0;
+			int nickels= (int)Math.round((ninth*20));
 			if (nickels != 0) {
 			System.out.println(nickels+ " nickels");}
 			
@@ -105,5 +110,7 @@ public class Main {
 			} else if (ninth>=0.075&&ninth<0.1) {
 			dimes = dimes+1;}*/
 		}
-	}
+      }
+    }
+  }
 }
