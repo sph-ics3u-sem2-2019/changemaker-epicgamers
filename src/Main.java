@@ -10,25 +10,21 @@ public class Main{
 		 * How many 100s,50s,20s,10s,5s,toonies,loonies,quarters,dimes,nickels.
 		 * if it does not end in a 5 or 0, you must round the number appropriately.
 		 * if the payment doesn't cover the cost, output the amount still owing.
-		 * Also reminder that as many edge cases as possible should be patched.
-		 * 
 		 * double change2=Math.round((change3)*20);
-				double change=((change2)/20);
-		 */
-		
+				double change=((change2)/20);*/
+
 		//Recieve input
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
-		
-		
+
 		//Round 1 Start
 		double cost3=in.nextDouble();
 		double cost2=Math.round((cost3)*20);
 		double cost=((cost2)/20);
 		//Round 1 End
-		
+
 		if(cost<=0){
-			System.out.println("No sir you cannot do that.");
+			System.out.println("No sir, you cannot do that.");
 		}else{
 			/*do{
 			try{
@@ -38,7 +34,7 @@ public class Main{
 			  System.out.println("Try again.");
 		    }
 		}while (cost<0);*/
-			
+
 			//Read input
 			System.out.println("How much was paid?");
 			double payment=in.nextDouble();
@@ -46,7 +42,7 @@ public class Main{
 			if(payment<0){
 				System.out.println("Do not rob the cashier. Try again.");
 			}else if((payment*100)%5!=0){ //broken
-				System.out.println("Stop using pennies and get out of oue store.");
+				System.out.println("Stop using pennies and get out of our store.");
 			}else{
 				/*do{
 			try{
@@ -67,7 +63,9 @@ public class Main{
 				}else if(change==0){
 					System.out.println("You have paid in full.");
 				}else{
-					System.out.println("Your change is $"+change+".");
+					if (((payment*100)%10)==0){
+						System.out.println("Your change is $"+change+"0.");
+					}else{System.out.println("Your change is $"+change+".");}
 
 					int hundreds=(int)(change/100);
 					if(hundreds!=0){
