@@ -13,7 +13,6 @@ public class Main{
 		 * double change2=Math.round((change3)*20);
 				double change=((change2)/20);*/
 
-		//Recieve input
 		Scanner in=new Scanner(System.in);
 		System.out.println("How much is the cost?");
 
@@ -22,7 +21,8 @@ public class Main{
 		double cost2=Math.round((cost3)*20);
 		double cost=((cost2)/20);
 		//Round 1 End
-
+		
+		
 		if(cost<=0){
 			System.out.println("No sir, you cannot do that.");
 		}else{
@@ -35,13 +35,12 @@ public class Main{
 		    }
 		}while (cost<0);*/
 
-			//Read input
 			System.out.println("How much was paid?");
 			double payment=in.nextDouble();
 
 			if(payment<0){
 				System.out.println("Do not rob the cashier. Try again.");
-			}else if((payment*100)%5!=0){ //broken
+			}else if((payment*100)%5!=0){ //broken for cost=12 and payment=32.3
 				System.out.println("Stop using pennies and get out of our store.");
 			}else{
 				/*do{
@@ -59,7 +58,7 @@ public class Main{
 
 				if(change<0){
 					String o;
-					if (((change*100)%10)==0){o="0.";}else{o=".";}
+					if (((change*100)%10)==0){o="0";}else{o=" ";}
 					System.out.println("You still owe $"+-change+o);
 				}else if(change==0){
 					System.out.println("You have paid in full.");
@@ -67,7 +66,7 @@ public class Main{
 					if (((change*100)%10)==0){
 						System.out.println("Your change is $"+change+"0.");
 					}else{System.out.println("Your change is $"+change+".");}
-
+					
 					int hundreds=(int)(change/100);
 					if(hundreds!=0){
 						char s;
@@ -94,9 +93,7 @@ public class Main{
 
 					int fivers=(int)(fourth/5);
 					if(fivers!=0){
-						char s;
-						if (fivers==1) {s=' ';}else{s='s';}
-						System.out.println(fivers+" $5 bill"+s);}
+						System.out.println(fivers+" $5 bill");}
 					double fifth=(fourth-5*fivers);
 
 					int toonies=(int)(fifth/2);
