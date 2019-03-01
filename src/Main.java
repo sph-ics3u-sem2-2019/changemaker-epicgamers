@@ -37,10 +37,9 @@ public class Main{
 
 			System.out.println("How much was paid?");
 			double payment=in.nextDouble();
-
 			if(payment<0){
 				System.out.println("Do not rob the cashier. Try again.");
-			}else if((payment*100)%5!=0){ //broken for cost=12 and payment=32.3
+			}else if((Math.round(payment*100))%5!=0){ //broken for cost=12 and payment=32.3
 				System.out.println("Stop using pennies and get out of our store.");
 			}else{
 				/*do{
