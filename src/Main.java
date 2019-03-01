@@ -21,8 +21,7 @@ public class Main{
 		double cost2=Math.round((cost3)*20);
 		double cost=((cost2)/20);
 		//Round 1 End
-		
-		
+		//Once we find out a way to punish users who think they're funny by inputing text, we're freezing your computer.
 		if(cost<=0){
 			System.out.println("No sir, you cannot do that.");
 		}else{
@@ -63,8 +62,8 @@ public class Main{
 					System.out.println("You have paid in full.");
 				}else{
 					if (((change*100)%10)==0){
-						System.out.println("Your change is $"+change+"0.");
-					}else{System.out.println("Your change is $"+change+".");}
+						System.out.println("Your change is $"+change+"0");
+					}else{System.out.println("Your change is $"+change);}
 					
 					int hundreds=(int)(change/100);
 					if(hundreds!=0){
