@@ -52,18 +52,19 @@ public class Main{
 				System.out.println("Try again");
 			}
 		}while (payment<0);*/
-				in.close();
 				//Round 2 Start (change)
 				double change2=Math.round((payment-cost)*20);
 				double change=change2/20;
 				//Round 2 end (Change)
 
 				if(change<0){
-					System.out.println("You still owe $"+-change+".");
+					String o;
+					if (((change*100)%10)==0){o="0.";}else{o=".";}
+					System.out.println("You still owe $"+-change+o);
 				}else if(change==0){
 					System.out.println("You have paid in full.");
 				}else{
-					if (((payment*100)%10)==0){
+					if (((change*100)%10)==0){
 						System.out.println("Your change is $"+change+"0.");
 					}else{System.out.println("Your change is $"+change+".");}
 
@@ -76,9 +77,7 @@ public class Main{
 
 					int fifties=(int)(frist/50);
 					if(fifties!=0){
-						char s;
-						if (fifties==1) {s=' ';}else{s='s';}
-						System.out.println(fifties+" $50 bill"+s);}
+						System.out.println(fifties+" $50 bill");}
 					double second=(frist-50*fifties);
 
 					int twenties=(int)(second/20);
@@ -90,9 +89,7 @@ public class Main{
 
 					int tens=(int)(third/10);
 					if(tens!=0){
-						char s;
-						if (tens==1) {s=' ';}else{s='s';}
-						System.out.println(tens+" $10 bill"+s);}
+						System.out.println(tens+" $10 bill");}
 					double fourth=(third-10*tens);
 
 					int fivers=(int)(fourth/5);
@@ -111,9 +108,7 @@ public class Main{
 
 					int loonies=(int)(sixth);
 					if(loonies!=0){
-						char s;
-						if (loonies==1) {s=' ';}else{s='s';}
-						System.out.println(loonies+" loonie"+s);}
+						System.out.println(loonies+" loonie");}
 					double seventh=(sixth-loonies);
 
 					int quarters=(int)(seventh*4);
@@ -143,5 +138,6 @@ public class Main{
 				}
 			}
 		}
+		in.close();
 	}
 }
